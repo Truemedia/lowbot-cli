@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "CLI tool for lowbot",
   "main": "src/index.js",
+  "bin": {
+    "lowbot": "./src/cli.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
