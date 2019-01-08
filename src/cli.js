@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 const yargs = require('yargs')
+const initStarter = require('./init-starter')
 
 const handlerP = fn => (...args) => {
   Promise.resolve(fn(...args)).then(
@@ -34,7 +35,7 @@ return cli
         desc: `Create new Lowbot project.`,
         handler: handlerP(
           ({ rootPath, starter = `lowbot/lowbot-starter-default` }) => {
-            console.log('input', rootPath, starter);
+            return initStarter(starter, { rootPath })
           }
         ),
       })
@@ -43,4 +44,4 @@ return cli
       .strict()
       .showHelpOnFail(true)
       .recommendCommands()
-      .parse(process.argv.slice(2))
+      .parse( process.argv.slice(2) )
