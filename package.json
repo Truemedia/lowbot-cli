@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/Truemedia/lowbot-cli/issues"
   },
-  "homepage": "https://github.com/Truemedia/lowbot-cli#readme"
+  "homepage": "https://github.com/Truemedia/lowbot-cli#readme",
+  "devDependencies": {
+    "yargs": "^12.0.5"
+  }
 }
