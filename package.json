@@ -1,0 +1,26 @@
+{
+  "name": "lowbot-cli",
+  "version": "1.0.0",
+  "description": "CLI tool for lowbot",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Truemedia/lowbot-cli.git"
+  },
+  "keywords": [
+    "lowbot",
+    "cli",
+    "scaffolding",
+    "commands",
+    "tools"
+  ],
+  "author": "Wade Penistone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Truemedia/lowbot-cli/issues"
+  },
+  "homepage": "https://github.com/Truemedia/lowbot-cli#readme"
+}
