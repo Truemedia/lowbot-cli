@@ -17,6 +17,10 @@ CLI tool for lowbot
   lowbot new <project-name> <starter-name>
 ```
 ### Generating files to extend functionality (*make* command)
+#### Resolver
+```bash
+  lowbot make resolver
+```
 #### Template
 ```bash
   lowbot make template
