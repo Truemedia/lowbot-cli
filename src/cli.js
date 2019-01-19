@@ -46,7 +46,7 @@ return cli
         command: `new [rootPath] [starter]`,
         desc: `Create new Lowbot project.`,
         handler: q(
-          ({ rootPath, starter = `lowbot/lowbot-starter-default` }) => {
+          ({ rootPath, starter = `Truemedia/lowbot-starter-default` }) => {
             return initStarter(starter, { rootPath })
           }
         )
