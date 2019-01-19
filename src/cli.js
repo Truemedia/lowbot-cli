@@ -3,6 +3,7 @@ const yargs = require('yargs')
 const inquirer = require('inquirer')
 const report = require('signale')
 const initStarter = require('./init-starter')
+const generators = require('./gulpfile');
 
 const q = fn => (...args) => {
   return inquirer.prompt([
@@ -44,7 +45,7 @@ cli
 return cli
       .command({
         command: `new [rootPath] [starter]`,
-        desc: `Create new Lowbot project.`,
+        desc: `Create a new Lowbot project.`,
         handler: q(
           ({ rootPath, starter = `Truemedia/lowbot-starter-default` }) => {
             return initStarter(starter, { rootPath })
@@ -55,6 +56,13 @@ return cli
         //     return initStarter(starter, { rootPath })
         //   }
         // ),
+      })
+      .command({
+        command: `make [generator]`,
+        desc: `Generate files for extending lowbot functionality`,
+        handler: ({generator}) => {
+          return generators[generator]()
+        }
       })
       .wrap(cli.terminalWidth())
       .demandCommand(1, `Pass --help to see all available commands and options.`)
