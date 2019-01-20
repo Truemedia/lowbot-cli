@@ -1,19 +1,18 @@
 const lazypipe = require('lazypipe');
 const gulpPlugins = require('auto-plug')('gulp');
 const PO = require('pofile');
-const Pipe = require('./../../pipe');
+const File = require('stream-render-pipeline');
 
-class Locale extends Pipe
+class LocaleFile extends File
 {
-  constructor(localeName)
+  constructor(opts)
   {
-    super();
-    this.localeName = localeName;
+    super(opts);
   }
 
-  get pipeline()
+  get render()
   {
-    let {localeName} = this;
+    let {localeName} = this.opts;
     let po = new PO();
     po.headers = {
       "X-Poedit-Basepath": "../../tpl",
@@ -25,4 +24,4 @@ class Locale extends Pipe
   }
 }
 
-module.exports = Locale;
+module.exports = LocaleFile;

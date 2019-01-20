@@ -1,18 +1,17 @@
 const lazypipe = require('lazypipe');
 const gulpPlugins = require('auto-plug')('gulp');
-const Pipe = require('./../../pipe');
+const File = require('stream-render-pipeline');
 
-class Templates extends Pipe
+class TemplateFiles extends File
 {
   constructor(opts)
   {
-    super();
-    this.data = opts;
+    super(opts);
   }
 
-  get pipeline()
+  get render()
   {
-    let {tplName} = this.data;
+    let {tplName} = this.opts;
 
     return lazypipe()
       .pipe(gulpPlugins.addSrc, this.tplPath(__dirname, '*.hbs')) // Files
@@ -30,4 +29,4 @@ class Templates extends Pipe
   }
 }
 
-module.exports = Templates;
+module.exports = TemplateFiles;

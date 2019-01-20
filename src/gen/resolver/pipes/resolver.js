@@ -1,19 +1,17 @@
 const lazypipe = require('lazypipe');
 const gulpPlugins = require('auto-plug')('gulp');
-const Pipe = require('./../../pipe');
+const File = require('stream-render-pipeline');
 
-class Resolver extends Pipe
+class ResolverFile extends File
 {
-  constructor(resolverName, tplName = null)
+  constructor(opts)
   {
-    super();
-    this.resolverName = resolverName;
-    this.tplName = tplName;
+    super(opts);
   }
 
-  get pipeline()
+  get render()
   {
-    let {resolverName, tplName} = this;
+    let {resolverName, tplName} = this.opts;
 
     return lazypipe()
       .pipe(gulpPlugins.addSrc, this.tplPath(__dirname, '*.js')) // Files
@@ -26,4 +24,4 @@ class Resolver extends Pipe
   }
 }
 
-module.exports = Resolver;
+module.exports = ResolverFile;
