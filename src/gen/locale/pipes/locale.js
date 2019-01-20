@@ -20,7 +20,7 @@ class LocaleFile extends File
     };
 
     return lazypipe()
-      .pipe(gulpPlugins.file, `${localeName}/messages.po`, po.toString());
+      .pipe( this.pre(`${localeName}/messages.po`, po.toString()) );
   }
 }
 

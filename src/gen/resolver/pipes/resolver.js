@@ -11,14 +11,12 @@ class ResolverFile extends File
 
   get render()
   {
-    let {resolverName, tplName} = this.opts;
+    let {resolverName, templateName} = this.opts;
 
     return lazypipe()
-      .pipe(gulpPlugins.addSrc, this.tplPath(__dirname, '*.js')) // Files
-      .pipe(gulpPlugins.template, { // Templating
-        resolverName, tplName
-      })
-      .pipe(gulpPlugins.rename, (file) => { // Directory and filename
+      .pipe( this.src(__dirname, '*.js'))
+      .pipe( this.tpl({resolverName, templateName}) )
+      .pipe(this.rename, (file) => { // Directory and filename
         file.basename = file.basename.replace('template', resolverName);
       });
   }
