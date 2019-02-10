@@ -45,21 +45,21 @@ cli
 return cli
       .command({
         command: `new [rootPath] [starter]`,
-        desc: `Create a new Lowbot project.`,
+        desc: `Create a new Mind Stack project.`,
         handler: q(
-          ({ rootPath, starter = `Truemedia/lowbot-starter-default` }) => {
+          ({ rootPath, starter = `Truemedia/mindstack-starter-default` }) => {
             return initStarter(starter, { rootPath })
           }
         )
         // handler: handlerP(
-        //   ({ rootPath, starter = `lowbot/lowbot-starter-default` }) => {
+        //   ({ rootPath, starter = `mindstack/mindstack-starter-default` }) => {
         //     return initStarter(starter, { rootPath })
         //   }
         // ),
       })
       .command({
         command: `make [generator]`,
-        desc: `Generate files for extending lowbot functionality`,
+        desc: `Generate files for extending Mind Stack functionality`,
         handler: ({generator}) => {
           return generators[generator]()
         }

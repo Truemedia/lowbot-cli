@@ -59,7 +59,7 @@ const copy = async (starterPath, rootPath) => {
       `You can't create a starter from the existing directory. If you want to
       create a new site in the current directory, the trailing dot isn't
       necessary. If you want to create a new site from a local starter, run
-      something like "lowbot new new-lowbot-bot ../my-lowbot-starter"`
+      something like "mindstack new new-mindstack-bot ../my-mindstack-starter"`
     )
   }
 
@@ -109,7 +109,7 @@ module.exports = async (starter, options) => {
   const urlObject = url.parse(rootPath)
   if (urlObject.protocol && urlObject.host) {
     report.error(
-      `It looks like you forgot to add a name for your new project. Try running instead "lowbot new new-lowbot-project ${rootPath}"`
+      `It looks like you forgot to add a name for your new project. Try running instead "mindstack new new-mindstack-project ${rootPath}"`
     )
     return
   }

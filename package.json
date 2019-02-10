@@ -1,20 +1,20 @@
 {
-  "name": "lowbot-cli",
-  "version": "1.0.0",
-  "description": "CLI tool for lowbot",
+  "name": "mindstack-cli",
+  "version": "0.1.0",
+  "description": "CLI tool for creating and developing with Mind Stack",
   "main": "src/index.js",
   "bin": {
-    "lowbot": "./src/cli.js"
+    "mindstack": "./src/cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Truemedia/lowbot-cli.git"
+    "url": "git+https://github.com/Truemedia/mindstack-cli.git"
   },
   "keywords": [
-    "lowbot",
+    "mindstack",
     "cli",
     "scaffolding",
     "commands",
@@ -23,9 +23,9 @@
   "author": "Wade Penistone",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Truemedia/lowbot-cli/issues"
+    "url": "https://github.com/Truemedia/mindstack-cli/issues"
   },
-  "homepage": "https://github.com/Truemedia/lowbot-cli#readme",
+  "homepage": "https://github.com/Truemedia/mindstack-cli#readme",
   "devDependencies": {
     "auto-plug": "^1.2.0",
     "change-case": "^3.1.0",
