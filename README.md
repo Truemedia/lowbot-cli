@@ -1,31 +1,31 @@
-# Lowbot CLI
-CLI tool for lowbot
+# Mind Stack CLI
+CLI tool for creating and developing with Mind Stack
 
 ## Installation
 ```bash
-  npm i -g lowbot-cli
+  npm i -g mindstack-cli
 ```
 
 ## Usage
-### Creating a new lowbot project (*new* command)
+### Creating a new Mind Stack project (*new* command)
 #### Default starter
 ```bash
-  lowbot new <project-name>
+  mindstack new <project-name>
 ```
 #### Custom starter
 ```bash
-  lowbot new <project-name> <starter-name>
+  mindstack new <project-name> <starter-name>
 ```
 ### Generating files to extend functionality (*make* command)
 #### Locale
 ```bash
-  lowbot make locale
+  mindstack make locale
 ```
 #### Resolver
 ```bash
-  lowbot make resolver
+  mindstack make resolver
 ```
 #### Template
 ```bash
-  lowbot make template
+  mindstack make template
 ```
