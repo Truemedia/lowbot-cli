@@ -5,6 +5,11 @@ const report = require('signale')
 const initStarter = require('./init-starter')
 const generators = require('./gulpfile');
 
+var exec = require('child_process').exec;
+function execute(command, callback){
+    exec(command, function(error, stdout, stderr){ callback(stdout); });
+};
+
 const q = fn => (...args) => {
   return inquirer.prompt([
     {
@@ -62,6 +67,26 @@ return cli
         desc: `Generate files for extending Mind Stack functionality`,
         handler: ({generator}) => {
           return generators[generator]()
+        }
+      })
+      .command({
+        command: `learn intents`,
+        desc: `Train bot to recognise intents`,
+        handler: () => {
+          console.log('Training bot to recognise intents...');
+          execute('python -m rasa_nlu.train -c nlu_config.yml --data nlu.md -o models --fixed_model_name nlu --project current --verbose', function(output) {
+            console.log(output);
+          });
+        }
+      })
+      .command({
+        command: `pipeline nlu`,
+        desc: `Run NLU pipeline`,
+        handler: () => {
+          console.log('Starting Rasa server...');
+          execute('python -m rasa_nlu.server --path models/', function(output) {
+            console.log(output);
+          });
         }
       })
       .wrap(cli.terminalWidth())
