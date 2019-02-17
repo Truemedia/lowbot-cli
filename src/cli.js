@@ -83,7 +83,7 @@ return cli
         command: `pipeline nlu`,
         desc: `Run NLU pipeline`,
         handler: () => {
-          console.log('Starting Rasa server...');
+          console.log('Running Rasa server...');
           execute('python -m rasa_nlu.server --path models/', function(output) {
             console.log(output);
           });
