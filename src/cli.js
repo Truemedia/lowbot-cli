@@ -76,7 +76,7 @@ return cli
         handler: (argv) => {
           console.log('Training bot to recognise intents...');
           let python = py(argv.py);
-          execute(`${python} -m rasa_nlu.train -c nlu_config.yml --data nlu.md -o models --fixed_model_name nlu --project current --verbose`, function(output) {
+          execute(`${python} -m rasa_nlu.train -c nlu_config.yml --data nlu_data/training_data.json -o models --fixed_model_name nlu --project current --verbose`, function(output) {
             console.log(output);
           });
         }
